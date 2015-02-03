@@ -1342,9 +1342,7 @@ class SchedulerManager(manager.Manager):
         for server_id in server_id_list:
             db.init_node_update(context, server_id, values)
         active_server_list = server_list
-        LOG.info('active_server_list===%s'%active_server_list)
         idx = random.randint(0, len(active_server_list)-1)
-        LOG.info('idx===%s'%idx)
         return active_server_list[idx]
 
     def add_cache_tier(self, context, body):
