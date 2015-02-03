@@ -63,7 +63,11 @@ class API(object):
     def create_cluster(self, context, server_list):
         return self.scheduler_rpcapi.create_cluster(context, server_list)
 
+<<<<<<< HEAD
     def intergrate_cluster(self, context, server_list=[]):
+=======
+    def intergrate_cluster(self, context, server_list):
+>>>>>>> 347c0ed... add api  of intergrating an existing ceph cluster
         return self.scheduler_rpcapi.intergrate_cluster(context, server_list)
 
     def get_zone_list(self, context):
