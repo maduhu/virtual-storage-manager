@@ -133,7 +133,7 @@ class ClusterController(wsgi.Controller):
         else:
             return {"message":"No such cluster which named  %s in DB"%cluster_name}
 
-    def intergrate(self, req,body=None):
+    def intergrate(self, req,body):
         """
         intergrate an existing ceph cluster
         """
