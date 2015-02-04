@@ -133,13 +133,13 @@ class ClusterController(wsgi.Controller):
         else:
             return {"message":"No such cluster which named  %s in DB"%cluster_name}
 
-    def intergrate(self, req, body):
+    def intergrate(self, req,body):
         """
         intergrate an existing ceph cluster
         """
-        LOG.info("CEPH_LOG cluster intergrate body: %s" % body)
+        LOG.info("CEPH_LOG cluster intergrate body" )
         context = req.environ['vsm.context']
-        server_list = body['cluster']['servers']
+        #server_list = body['cluster']['servers']
         LOG.info('Begin to call scheduler.intergrate_cluster')
         self.scheduler_api.intergrate_cluster(context)
 
