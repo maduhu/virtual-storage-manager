@@ -30,3 +30,5 @@ token-tenant
 [ssd_cached_10krpm_sas]
 #format [intel_cache_device]  [journal_device]
 
+[zone]
+zone0
