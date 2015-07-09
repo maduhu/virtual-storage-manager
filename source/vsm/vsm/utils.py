@@ -146,19 +146,20 @@ def execute(*cmd, **kwargs):
                                 'to utils.execute: %r') % kwargs)
 
     if run_as_root:
-
-        if FLAGS.rootwrap_config is None or FLAGS.root_helper != 'sudo':
-            LOG.deprecated(_('The root_helper option (which lets you specify '
-                             'a root wrapper different from vsm-rootwrap, '
-                             'and defaults to using sudo) is now deprecated. '
-                             'You should use the rootwrap_config option '
-                             'instead.'))
-
-        if (FLAGS.rootwrap_config is not None):
-            cmd = ['sudo', 'vsm-rootwrap',
-                   FLAGS.rootwrap_config] + list(cmd)
-        else:
-            cmd = shlex.split(FLAGS.root_helper) + list(cmd)
+        LOG.debug("Running as root (fake): " + str(cmd))
+#
+#        if FLAGS.rootwrap_config is None or FLAGS.root_helper != 'sudo':
+#            LOG.deprecated(_('The root_helper option (which lets you specify '
+#                             'a root wrapper different from vsm-rootwrap, '
+#                             'and defaults to using sudo) is now deprecated. '
+#                             'You should use the rootwrap_config option '
+#                             'instead.'))
+#
+#        if (FLAGS.rootwrap_config is not None):
+#            cmd = ['sudo', 'vsm-rootwrap',
+#                   FLAGS.rootwrap_config] + list(cmd)
+#        else:
+#            cmd = shlex.split(FLAGS.root_helper) + list(cmd)
     cmd = map(str, cmd) # pylint: disable=W0141
 
     while attempts > 0:
