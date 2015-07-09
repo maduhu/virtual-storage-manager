@@ -1,0 +1,66 @@
+#---------------------------------------------
+# USER
+#---------------------------------------------
+
+STACK_USER=stack
+
+#---------------------------------------------
+# PIP
+#---------------------------------------------
+
+REPO_HOST=192.168.56.128
+
+#---------------------------------------------
+
+# HTTPS
+#---------------------------------------------
+
+VSM_HTTPS_PASSWORD=968658bbae5f55975aa2
+
+#---------------------------------------------
+
+# MySQL
+#---------------------------------------------
+
+MYSQL_ROOT_PASSWORD=3d163fbb6ca748f834f5
+MYSQL_HOST=192.168.56.128
+
+#---------------------------------------------
+# RabbitMQ
+#---------------------------------------------
+
+RABBITMQ_HOST=192.168.56.128
+RABBITMQ_USER=guest
+RABBITMQ_PASSWORD=197c3e22bfdb7653fec3
+RABBITMQ_NODENAME=deploy_rabbitmq
+RABBITMQ_PORT=5673
+
+
+#---------------------------------------------
+# Keystone
+#---------------------------------------------
+
+MYSQL_KEYSTONE_USER=keystone
+MYSQL_KEYSTONE_PASSWORD=e973260e089866a6f924
+KEYSTONE_HOST=192.168.56.128
+ADMIN_PASSWORD=efca37192cd3d96c9310
+ADMIN_TOKEN=face15f5925c5e076d7e
+AGENT_PASSWORD=0a557e58bff56ca2c398
+
+#---------------------------------------------
+# VSM
+#---------------------------------------------
+
+VSM_HOST=192.168.56.128
+MYSQL_VSM_USER=vsm
+MYSQL_VSM_PASSWORD=44724e3a04578ba63f17
+KEYSTONE_VSM_SERVICE_PASSWORD=3bafff2a356f6cd43fcd
+VSM_RUNNING_SERVICE=vsm-api,vsm-conductor,vsm-scheduler
+
+#---------------------------------------------
+# VSM-Dashboard
+#---------------------------------------------
+
+DASHBOARD_HOST=192.168.56.128
+MYSQL_DASHBOARD_USER=dashboard
+MYSQL_DASHBOARD_PASSWORD=ee89e6f8582eec57e6df
