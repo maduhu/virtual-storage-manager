@@ -1,5 +1,5 @@
 [vsm_controller_ip]
-#10.239.82.168
+192.168.56.128
 
 [role]
 storage
@@ -15,13 +15,7 @@ token-tenant
 #format [sata_device]  [journal_device]
 [10krpm_sas]
 #format [sas_device]  [journal_device] 
-%osd-by-path-1%   %journal-by-path-1%
-%osd-by-path-2%   %journal-by-path-2%
-%osd-by-path-3%   %journal-by-path-3%
-%osd-by-path-4%   %journal-by-path-4%
-%osd-by-path-5%   %journal-by-path-5%
-%osd-by-path-6%   %journal-by-path-6%
-%osd-by-path-7%   %journal-by-path-7%
+/dev/abc   /dev/abc_jour
 
 [ssd_cached_7200rpm_sata]
 #format [intel_cache_device]  [journal_device] 
