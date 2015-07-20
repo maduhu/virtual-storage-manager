@@ -42,7 +42,7 @@ def upgrade(migrate_engine):
                Text(convert_unicode=False,
                     unicode_error=None, _warn_on_bytestring=False),
                nullable=True),
-        Column('ceph_conf', String(length=10485760), nullable=True),
+        Column('ceph_conf', String(length=11844), nullable=True),
         Column('deleted_times', Integer, nullable=True),
         Column('created_at', DateTime(timezone=False)),
         Column('updated_at', DateTime(timezone=False)),

@@ -556,7 +556,7 @@ class Cluster(BASE, VsmBase):
     journal_size = Column(Integer, default=0)
     deleted_times = Column(Integer, default=0)
     info_dict = Column(Text, nullable=True)
-    ceph_conf = Column(String(length=10485760), nullable=True)
+    ceph_conf = Column(String(length=11845), nullable=True)
 
 
 class StoragePool(BASE, VsmBase):

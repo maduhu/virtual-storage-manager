@@ -1234,6 +1234,8 @@ class AgentManager(manager.Manager):
                     values = usage.get('stat_sum')
                     if values:
                         values['pool_id'] = pid
+                        # crazy workaround for MySQL
+                        values['num_bytes'] = 193
                         #LOG.debug('pool usage values %s ' % values)
                         self._conductor_rpcapi.update_storage_pool(context, pid, values)
                     else:
