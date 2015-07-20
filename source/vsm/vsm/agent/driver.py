@@ -1002,17 +1002,21 @@ class CephDriver(object):
         # stop ceph-osd daemon on the storage node
         # Param: the osd id
         # return Bool
-        file_path = '/var/run/ceph/osd.%s.pid' % num
-        if os.path.exists(file_path):
-            self._kill_by_pid_file(file_path)
-        else:
-            LOG.info('Can not find pid file for osd.%s' % num)
+        #file_path = '/var/run/ceph/osd.%s.pid' % num
+        #if os.path.exists(file_path):
+        #    self._kill_by_pid_file(file_path)
+        #else:
+        #    LOG.info('Can not find pid file for osd.%s' % num)
+        osd = "osd.%s" % num
+        LOG.info('begin to stop osd = %s' % osd)
+        utils.execute('stop', 'ceph-osd', 'id=%s' % num, run_as_root=True)
         return True
 
     def start_osd_daemon(self, context, num):
         osd = "osd.%s" % num
         LOG.info('begin to start osd = %s' % osd)
-        utils.execute('service', 'ceph', 'start', osd, run_as_root=True)
+        #utils.execute('service', 'ceph', 'start', osd, run_as_root=True)
+        utils.execute('start', 'ceph-osd', 'id=%s' % num, run_as_root=True)
         return True
 
     def stop_mon_daemon(self, context, num):
@@ -1458,11 +1462,10 @@ class CephDriver(object):
         return True
 
     def ceph_osd_stop(self, context, osd_name):
-        utils.execute('service',
-                      'ceph',
-                      '-a',
-                      'stop',
-                      osd_name,
+        osd_id = osd_name.split('.')[-1]
+        utils.execute('stop',
+                      'ceph-osd',
+                      'id=%s' % osd_id,
                       run_as_root=True)
         #osd_id = osd_name.split('.')[-1]
         #values = {'state': 'Out-Down', 'osd_name': osd_name}

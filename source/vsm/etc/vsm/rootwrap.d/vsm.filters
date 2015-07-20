@@ -51,6 +51,8 @@ echo: CommandFilter, /bin/echo, root
 cp: CommandFilter, /bin/cp, root
 scp: CommandFilter, /usr/bin/scp, root
 service: CommandFilter, /sbin/service, root
+start: CommandFilter, /sbin/start, root
+stop: CommandFilter, /sbin/stop, root
 mkdir: CommandFilter, /bin/mkdir, root
 hostname: CommandFilter, /bin/hostname, root
 ls: CommandFilter, /bin/ls, root
