@@ -209,13 +209,14 @@ class AgentManager(manager.Manager):
                 if pre_status == 'Active':
                     try:
                         # check if ceph daemons are up.
-                        (stdout, stderr) = utils.execute('service', 'ceph', 'status', run_as_root=True)
+                        #(stdout, stderr) = utils.execute('service', 'ceph', 'status', run_as_root=True)
+                        pass
                     except exception.ProcessExecutionError:
                         LOG.warn('The ceph daemon was not restored: %s' % stderr)
                 elif pre_status == 'Stopped':
                     # Stop the ceph daemon if they are up. Restore the status to 'Stopped'
                     LOG.debug('Stop ceph daemon on host %s' % node_id)
-                    utils.execute('service', 'ceph', 'stop', run_as_root=True)
+                    #utils.execute('service', 'ceph', 'stop', run_as_root=True)
 
                 if pre_status in ('Active', 'Stopped', 'available'):
                     return True
@@ -223,7 +224,7 @@ class AgentManager(manager.Manager):
                 # in case the status did not change when the server's up.
                 # Stop the ceph daemon if they are up.
                 LOG.debug('Stop ceph daemon on host %s' % node_id)
-                utils.execute('service', 'ceph', 'stop', run_as_root=True)
+                #utils.execute('service', 'ceph', 'stop', run_as_root=True)
         return False
 
     def insert_node_info_into_db(self):
